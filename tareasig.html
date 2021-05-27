@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8" />
+
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+    <style>
+        #map {
+            width: 100%;
+            height: 600px;
+            box-shadow: 5px 5px 5px rgb(105, 59, 59);
+        }
+
+        .info {
+            padding: 6px 8px;
+            font: 14px/16px Arial, Helvetica, sans-serif;
+            background: white;
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+        }
+
+        .info h2 {
+            margin: 0 0 5px;
+            color: #777;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="map">
+        <div class="leaflet-pane leaflet-map-pane" style="transform: translate3d(-8px, 0px, 0px);">
+            <div class="leaflet-pane leaflet-tile-pane">
+                <div class="leaflet-layer " style="z-index: 1; opacity: 1;">
+                    <div class="leaflet-tile-container leaflet-zoom-animated"
+                        style="z-index: 17; transform: translate3d(158px, 219px, 0px) scale(0.5);"></div>
+                    <div class="leaflet-tile-container leaflet-zoom-animated"
+                        style="z-index: 18; transform: translate3d(158px, 219px, 0px) scale(1);"><img alt=""
+                            role="presentation" src="./amss_files/235.png" class="leaflet-tile leaflet-tile-loaded"
+                            style="width: 256px; height: 256px; transform: translate3d(206px, -209px, 0px); opacity: 1;"><img
+                            alt="" role="presentation" src="./amss_files/236.png"
+                            class="leaflet-tile leaflet-tile-loaded"
+                            style="width: 256px; height: 256px; transform: translate3d(206px, 47px, 0px); opacity: 1;"><img
+                            alt="" role="presentation" src="./amss_files/235(1).png"
+                            class="leaflet-tile leaflet-tile-loaded"
+                            style="width: 256px; height: 256px; transform: translate3d(-50px, -209px, 0px); opacity: 1;"><img
+                            alt="" role="presentation" src="./amss_files/235(2).png"
+                            class="leaflet-tile leaflet-tile-loaded"
+                            style="width: 256px; height: 256px; transform: translate3d(462px, -209px, 0px); opacity: 1;"><img
+                            alt="" role="presentation" src="./amss_files/236(1).png"
+                            class="leaflet-tile leaflet-tile-loaded"
+                            style="width: 256px; height: 256px; transform: translate3d(-50px, 47px, 0px); opacity: 1;"><img
+                            alt="" role="presentation" src="./amss_files/236(2).png"
+                            class="leaflet-tile leaflet-tile-loaded"
+                            style="width: 256px; height: 256px; transform: translate3d(462px, 47px, 0px); opacity: 1;"><img
+                            alt="" role="presentation" src="./amss_files/234.png"
+                            class="leaflet-tile leaflet-tile-loaded"
+                            style="width: 256px; height: 256px; transform: translate3d(206px, -465px, 0px); opacity: 1;"><img
+                            alt="" role="presentation" src="./amss_files/237.png"
+                            class="leaflet-tile leaflet-tile-loaded"
+                            style="width: 256px; height: 256px; transform: translate3d(206px, 303px, 0px); opacity: 1;"><img
+                            alt="" role="presentation" src="./amss_files/234(1).png"
+                            class="leaflet-tile leaflet-tile-loaded"
+                            style="width: 256px; height: 256px; transform: translate3d(-50px, -465px, 0px); opacity: 1;"><img
+                            alt="" role="presentation" src="./amss_files/234(2).png"
+                            class="leaflet-tile leaflet-tile-loaded"
+                            style="width: 256px; height: 256px; transform: translate3d(462px, -465px, 0px); opacity: 1;"><img
+                            alt="" role="presentation" src="./amss_files/237(1).png"
+                            class="leaflet-tile leaflet-tile-loaded"
+                            style="width: 256px; height: 256px; transform: translate3d(-50px, 303px, 0px); opacity: 1;"><img
+                            alt="" role="presentation" src="./amss_files/237(2).png"
+                            class="leaflet-tile leaflet-tile-loaded"
+                            style="width: 256px; height: 256px; transform: translate3d(462px, 303px, 0px); opacity: 1;"><img
+                            alt="" role="presentation" src="./amss_files/235(3).png"
+                            class="leaflet-tile leaflet-tile-loaded"
+                            style="width: 256px; height: 256px; transform: translate3d(-306px, -209px, 0px); opacity: 1;"><img
+                            alt="" role="presentation" src="./amss_files/235(4).png"
+                            class="leaflet-tile leaflet-tile-loaded"
+                            style="width: 256px; height: 256px; transform: translate3d(718px, -209px, 0px); opacity: 1;"><img
+                            alt="" role="presentation" src="./amss_files/236(3).png"
+                            class="leaflet-tile leaflet-tile-loaded"
+                            style="width: 256px; height: 256px; transform: translate3d(-306px, 47px, 0px); opacity: 1;"><img
+                            alt="" role="presentation" src="./amss_files/236(4).png"
+                            class="leaflet-tile leaflet-tile-loaded"
+                            style="width: 256px; height: 256px; transform: translate3d(718px, 47px, 0px); opacity: 1;"><img
+                            alt="" role="presentation" src="./amss_files/234(3).png"
+                            class="leaflet-tile leaflet-tile-loaded"
+                            style="width: 256px; height: 256px; transform: translate3d(-306px, -465px, 0px); opacity: 1;"><img
+                            alt="" role="presentation" src="./amss_files/234(4).png"
+                            class="leaflet-tile leaflet-tile-loaded"
+                            style="width: 256px; height: 256px; transform: translate3d(718px, -465px, 0px); opacity: 1;"><img
+                            alt="" role="presentation" src="./amss_files/237(3).png"
+                            class="leaflet-tile leaflet-tile-loaded"
+                            style="width: 256px; height: 256px; transform: translate3d(-306px, 303px, 0px); opacity: 1;"><img
+                            alt="" role="presentation" src="./amss_files/237(4).png"
+                            class="leaflet-tile leaflet-tile-loaded"
+                            style="width: 256px; height: 256px; transform: translate3d(718px, 303px, 0px); opacity: 1;">
+                    </div>
+                </div>
+                <div class="leaflet-layer " style="z-index: 2; opacity: 1;">
+                    <div class="leaflet-tile-container leaflet-zoom-animated"
+                        style="z-index: 17; transform: translate3d(158px, 219px, 0px) scale(0.5);"></div>
+                    <div class="leaflet-tile-container leaflet-zoom-animated"
+                        style="z-index: 18; transform: translate3d(158px, 219px, 0px) scale(1);"><img alt=""
+                            role="presentation" src="./amss_files/wms" class="leaflet-tile"
+                            style="width: 256px; height: 256px; transform: translate3d(206px, -209px, 0px); opacity: 1;"><img
+                            alt="" role="presentation" src="./amss_files/wms(1)" class="leaflet-tile"
+                            style="width: 256px; height: 256px; transform: translate3d(206px, 47px, 0px); opacity: 1;"><img
+                            alt="" role="presentation" src="./amss_files/wms(2)" class="leaflet-tile"
+                            style="width: 256px; height: 256px; transform: translate3d(-50px, -209px, 0px); opacity: 1;"><img
+                            alt="" role="presentation" src="./amss_files/wms(3)" class="leaflet-tile"
+                            style="width: 256px; height: 256px; transform: translate3d(462px, -209px, 0px); opacity: 1;"><img
+                            alt="" role="presentation" src="./amss_files/wms(4)" class="leaflet-tile"
+                            style="width: 256px; height: 256px; transform: translate3d(-50px, 47px, 0px); opacity: 1;"><img
+                            alt="" role="presentation" src="./amss_files/wms(5)" class="leaflet-tile"
+                            style="width: 256px; height: 256px; transform: translate3d(462px, 47px, 0px); opacity: 1;"><img
+                            alt="" role="presentation" src="./amss_files/wms(6)" class="leaflet-tile"
+                            style="width: 256px; height: 256px; transform: translate3d(206px, -465px, 0px); opacity: 1;"><img
+                            alt="" role="presentation" src="./amss_files/wms(7)" class="leaflet-tile"
+                            style="width: 256px; height: 256px; transform: translate3d(206px, 303px, 0px); opacity: 1;"><img
+                            alt="" role="presentation" src="./amss_files/wms(8)" class="leaflet-tile"
+                            style="width: 256px; height: 256px; transform: translate3d(-50px, -465px, 0px); opacity: 1;"><img
+                            alt="" role="presentation" src="./amss_files/wms(9)" class="leaflet-tile"
+                            style="width: 256px; height: 256px; transform: translate3d(462px, -465px, 0px); opacity: 1;"><img
+                            alt="" role="presentation" src="./amss_files/wms(10)" class="leaflet-tile"
+                            style="width: 256px; height: 256px; transform: translate3d(-50px, 303px, 0px); opacity: 1;"><img
+                            alt="" role="presentation" src="./amss_files/wms(11)" class="leaflet-tile"
+                            style="width: 256px; height: 256px; transform: translate3d(462px, 303px, 0px); opacity: 1;"><img
+                            alt="" role="presentation" src="./amss_files/wms(12)" class="leaflet-tile"
+                            style="width: 256px; height: 256px; transform: translate3d(-306px, -209px, 0px); opacity: 1;"><img
+                            alt="" role="presentation" src="./amss_files/wms(13)" class="leaflet-tile"
+                            style="width: 256px; height: 256px; transform: translate3d(718px, -209px, 0px); opacity: 1;"><img
+                            alt="" role="presentation" src="./amss_files/wms(14)" class="leaflet-tile"
+                            style="width: 256px; height: 256px; transform: translate3d(-306px, 47px, 0px); opacity: 1;"><img
+                            alt="" role="presentation" src="./amss_files/wms(15)" class="leaflet-tile"
+                            style="width: 256px; height: 256px; transform: translate3d(718px, 47px, 0px); opacity: 1;"><img
+                            alt="" role="presentation" src="./amss_files/wms(16)" class="leaflet-tile"
+                            style="width: 256px; height: 256px; transform: translate3d(-306px, -465px, 0px); opacity: 1;"><img
+                            alt="" role="presentation" src="./amss_files/wms(17)" class="leaflet-tile"
+                            style="width: 256px; height: 256px; transform: translate3d(718px, -465px, 0px); opacity: 1;"><img
+                            alt="" role="presentation" src="./amss_files/wms(18)" class="leaflet-tile"
+                            style="width: 256px; height: 256px; transform: translate3d(-306px, 303px, 0px); opacity: 1;"><img
+                            alt="" role="presentation" src="./amss_files/wms(19)" class="leaflet-tile"
+                            style="width: 256px; height: 256px; transform: translate3d(718px, 303px, 0px); opacity: 1;">
+                    </div>
+                </div>
+                <div class="leaflet-layer " style="z-index: 3; opacity: 1;">
+                    <div class="leaflet-tile-container leaflet-zoom-animated"
+                        style="z-index: 17; transform: translate3d(158px, 219px, 0px) scale(0.5);"></div>
+                    <div class="leaflet-tile-container leaflet-zoom-animated"
+                        style="z-index: 18; transform: translate3d(158px, 219px, 0px) scale(1);"><img alt=""
+                            role="presentation" src="./amss_files/rios.png" class="leaflet-tile leaflet-tile-loaded"
+                            style="width: 256px; height: 256px; transform: translate3d(206px, -209px, 0px); opacity: 1;"><img
+                            alt="" role="presentation" src="./amss_files/rios(1).png"
+                            class="leaflet-tile leaflet-tile-loaded"
+                            style="width: 256px; height: 256px; transform: translate3d(206px, 47px, 0px); opacity: 1;"><img
+                            alt="" role="presentation" src="./amss_files/rios(2).png"
+                            class="leaflet-tile leaflet-tile-loaded"
+                            style="width: 256px; height: 256px; transform: translate3d(-50px, -209px, 0px); opacity: 1;"><img
+                            alt="" role="presentation" src="./amss_files/rios(3).png"
+                            class="leaflet-tile leaflet-tile-loaded"
+                            style="width: 256px; height: 256px; transform: translate3d(462px, -209px, 0px); opacity: 1;"><img
+                            alt="" role="presentation" src="./amss_files/rios(4).png"
+                            class="leaflet-tile leaflet-tile-loaded"
+                            style="width: 256px; height: 256px; transform: translate3d(-50px, 47px, 0px); opacity: 1;"><img
+                            alt="" role="presentation" src="./amss_files/rios(5).png"
+                            class="leaflet-tile leaflet-tile-loaded"
+                            style="width: 256px; height: 256px; transform: translate3d(462px, 47px, 0px); opacity: 1;"><img
+                            alt="" role="presentation" src="./amss_files/rios(6).png"
+                            class="leaflet-tile leaflet-tile-loaded"
+                            style="width: 256px; height: 256px; transform: translate3d(206px, -465px, 0px); opacity: 1;"><img
+                            alt="" role="presentation" src="./amss_files/rios(7).png"
+                            class="leaflet-tile leaflet-tile-loaded"
+                            style="width: 256px; height: 256px; transform: translate3d(206px, 303px, 0px); opacity: 1;"><img
+                            alt="" role="presentation" src="./amss_files/rios(8).png"
+                            class="leaflet-tile leaflet-tile-loaded"
+                            style="width: 256px; height: 256px; transform: translate3d(-50px, -465px, 0px); opacity: 1;"><img
+                            alt="" role="presentation" src="./amss_files/rios(9).png"
+                            class="leaflet-tile leaflet-tile-loaded"
+                            style="width: 256px; height: 256px; transform: translate3d(462px, -465px, 0px); opacity: 1;"><img
+                            alt="" role="presentation" src="./amss_files/rios(10).png"
+                            class="leaflet-tile leaflet-tile-loaded"
+                            style="width: 256px; height: 256px; transform: translate3d(-50px, 303px, 0px); opacity: 1;"><img
+                            alt="" role="presentation" src="./amss_files/rios(11).png"
+                            class="leaflet-tile leaflet-tile-loaded"
+                            style="width: 256px; height: 256px; transform: translate3d(462px, 303px, 0px); opacity: 1;"><img
+                            alt="" role="presentation" src="./amss_files/rios(12).png"
+                            class="leaflet-tile leaflet-tile-loaded"
+                            style="width: 256px; height: 256px; transform: translate3d(-306px, -209px, 0px); opacity: 1;"><img
+                            alt="" role="presentation" src="./amss_files/rios(13).png"
+                            class="leaflet-tile leaflet-tile-loaded"
+                            style="width: 256px; height: 256px; transform: translate3d(718px, -209px, 0px); opacity: 1;"><img
+                            alt="" role="presentation" src="./amss_files/rios(14).png"
+                            class="leaflet-tile leaflet-tile-loaded"
+                            style="width: 256px; height: 256px; transform: translate3d(-306px, 47px, 0px); opacity: 1;"><img
+                            alt="" role="presentation" src="./amss_files/rios(15).png"
+                            class="leaflet-tile leaflet-tile-loaded"
+                            style="width: 256px; height: 256px; transform: translate3d(718px, 47px, 0px); opacity: 1;"><img
+                            alt="" role="presentation" src="./amss_files/rios(16).png"
+                            class="leaflet-tile leaflet-tile-loaded"
+                            style="width: 256px; height: 256px; transform: translate3d(-306px, -465px, 0px); opacity: 1;"><img
+                            alt="" role="presentation" src="./amss_files/rios(17).png"
+                            class="leaflet-tile leaflet-tile-loaded"
+                            style="width: 256px; height: 256px; transform: translate3d(718px, -465px, 0px); opacity: 1;"><img
+                            alt="" role="presentation" src="./amss_files/rios(18).png"
+                            class="leaflet-tile leaflet-tile-loaded"
+                            style="width: 256px; height: 256px; transform: translate3d(-306px, 303px, 0px); opacity: 1;"><img
+                            alt="" role="presentation" src="./amss_files/rios(19).png"
+                            class="leaflet-tile leaflet-tile-loaded"
+                            style="width: 256px; height: 256px; transform: translate3d(718px, 303px, 0px); opacity: 1;">
+                    </div>
+                </div>
+            </div>
+            <div class="leaflet-pane leaflet-shadow-pane"></div>
+            <div class="leaflet-pane leaflet-overlay-pane"></div>
+            <div class="leaflet-pane leaflet-marker-pane"></div>
+            <div class="leaflet-pane leaflet-tooltip-pane"></div>
+            <div class="leaflet-pane leaflet-popup-pane"></div>
+            <div class="leaflet-proxy leaflet-zoom-animated"
+                style="transform: translate3d(33163.5px, 60450px, 0px) scale(256);"></div>
+        </div>
+        <div class="leaflet-control-container">
+            <div class="leaflet-top leaflet-left">
+                <div class="leaflet-control-zoom leaflet-bar leaflet-control"><a class="leaflet-control-zoom-in"
+                        href="https://aula2.uca.edu.sv/access/content/group/fc7408f8-a12c-4539-a710-2fb85cb98f7e/Bloque%203/SEMANA%201/amss.html#"
+                        title="Zoom in" role="button" aria-label="Zoom in">+</a><a class="leaflet-control-zoom-out"
+                        href="https://aula2.uca.edu.sv/access/content/group/fc7408f8-a12c-4539-a710-2fb85cb98f7e/Bloque%203/SEMANA%201/amss.html#"
+                        title="Zoom out" role="button" aria-label="Zoom out">−</a></div>
+            </div>
+            <div class="leaflet-top leaflet-right">
+                <div class="info leaflet-control">
+                    <h2>Cerros y Ríos de Municipios de El Salvador</h2>Web Mapping
+                </div>
+                <div class="leaflet-control-layers leaflet-control-layers-expanded leaflet-control"
+                    aria-haspopup="true"><a class="leaflet-control-layers-toggle"
+                        href="https://aula2.uca.edu.sv/access/content/group/fc7408f8-a12c-4539-a710-2fb85cb98f7e/Bloque%203/SEMANA%201/amss.html#"
+                        title="Layers"></a>
+                    <section class="leaflet-control-layers-list">
+                        <div class="leaflet-control-layers-base"><label>
+                                <div><input type="radio" class="leaflet-control-layers-selector"
+                                        name="leaflet-base-layers_118" checked="checked"><span> OpenStreetMap</span>
+                                </div>
+                            </label></div>
+                        <div class="leaflet-control-layers-separator"></div>
+                        <div class="leaflet-control-layers-overlays"><label>
+                                <div><input type="checkbox" class="leaflet-control-layers-selector" checked=""><span>
+                                        Municipios</span></div>
+                            </label><label>
+                                <div><input type="checkbox" class="leaflet-control-layers-selector" checked=""><span>
+                                        Rios</span></div>
+                            </label></div>
+                        <div><input type="checkbox" class="leaflet-control-layers-selector" checked=""><span>
+                                Cerros</span></div>
+                        </label>
+                </div>
+                </section>
+            </div>
+        </div>
+        <div class="leaflet-bottom leaflet-left"></div>
+        <div class="leaflet-bottom leaflet-right">
+            <div class="leaflet-control-attribution leaflet-control"><a href="https://leafletjs.com/"
+                    title="A JS library for interactive maps">Leaflet</a> | © <a
+                    href="http://osm.org/copyright">OpenStreetMap</a>contributors, Centro Nacional de Registros
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script>
+        var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a>'
+                + 'contributors',
+            maxZoom: 18
+        });
+
+        var municipios = L.tileLayer.wms("http://localhost:8080/geoserver/wms", {
+            layers: 'municipios',
+            format: 'image/png',
+            transparent: true,
+            tiled: true,
+            styles: 'estilomuni',
+            attribution: "Natural Earth"
+        });
+
+        var rios = L.tileLayer.wms("http://localhost:8080/geoserver/wms", {
+            layers: 'rios',
+            format: 'image/png',
+            transparent: true,
+            tiled: true,
+            styles: 'estilorio',
+            attribution: "Natural Earth"
+        });
+
+        var cerros = L.tileLayer.wms("http://localhost:8080/geoserver/wms", {
+            layers: 'cerros',
+            format: 'image/png',
+            transparent: true,
+            tiled: true,
+            styles: 'estilocerro',
+            attribution: "Natural Earth"
+        });
+        var baseMaps = {
+            "OpenStreetMap": osm
+        };
+        var overlayMaps = {
+            "Municipios": municipios,
+            "Rios": rios,
+            "Cerros": cerros,
+        };
+        var map = L.map('map', {
+            center: new L.LatLng(13.65, -89.17),
+            zoom: 10,
+            //Añadimos las capas al mapa
+            layers: [osm, municipios, rios, cerros]
+        });
+        var title = L.control();
+        title.onAdd = function (map) {
+            var div = L.DomUtil.create('div', 'info');
+            div.innerHTML +=
+                '<h2>Cerros y Ríos de Municipios de El Salvador</h2>Web Mapping';
+            return div;
+        };
+        title.addTo(map);
+
+        var legend = L.control({ position: 'bottomright' });
+        legend.onAdd = function (map) {
+            var div = L.DomUtil.create('div', 'info legend');
+            div.innerHTML +=
+                '<p> Leyenda </p> ' +
+                '<p> <img src="http://localhost:8080/geoserver/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=40&HEIGHT=20&LAYER=municipios" alt="legend" > Municipioss </p> ' +
+                '<p> <img src="http://localhost:8080/geoserver/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=40&HEIGHT=20&LAYER=rios" alt="legend" > Ríos </p> ' +
+                '<p> <img src="http://localhost:8080/geoserver/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=40&HEIGHT=20&LAYER=cerros" alt="legend" > Cerros </p> ';
+            return div;
+        };
+        legend.addTo(map);
+
+        L.control.layers(baseMaps, overlayMaps, { collapsed: false }).addTo(map);
+    </script>
+</body>
+
+</html>
