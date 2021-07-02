@@ -13,7 +13,7 @@ Cristian Alexander Mundo Orellana |
 Rudi David Vallecios Gonzales 
 <p align="center">
     <span>
-      <a href="https://tremorsv.herokuapp.com/" target="blank"><img src="https://github.com/dannielarenderos/WebMappingMunicipiosRiosCerrosES/blob/main/img/CR.jpg" width="500" alt="Tremor SV" /></a>
+      <a href="https://tremorsv.herokuapp.com/" target="blank"><img src="https://github.com/dannielarenderos/WebMappingMunicipiosRiosCerrosES/blob/main/img/CrimeReporterLOGO.png" width="500" alt="Tremor SV" /></a>
     </span>
     <br/>
     <span>
