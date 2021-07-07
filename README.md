@@ -5,10 +5,9 @@
     <br/>
     <span>
       <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-      <img alt="" src="https://heroku-badge.herokuapp.com/?app=tremorsv">
-      <img alt="" src="https://img.shields.io/badge/PRs-Bienvenidos!-yellowgreen">
-      <img alt="" src="https://img.shields.io/badge/all_contributors-5-orange.svg?style=square">
-      <img alt="" src="https://img.shields.io/badge/License-Apache--2.0-blue">
+      <img alt="" src="https://img.shields.io/badge/Deployed-Heroku-blue">
+      <img alt="" src="https://img.shields.io/badge/Contributors-5-blueviolet">
+      <img alt="" src="https://img.shields.io/badge/License-Apache2.0-success">
     <!-- ALL-CONTRIBUTORS-BADGE:END -->
     </span>
 </p>
