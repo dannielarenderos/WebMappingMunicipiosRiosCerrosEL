@@ -14,7 +14,7 @@
 
 
 
-📌 Generalidades 
+## Generalidades 📌
 Herramientas y licencias 🔨
  
   📌[Leaflet](https://leafletjs.com/) 🌎
